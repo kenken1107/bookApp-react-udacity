@@ -2,9 +2,6 @@ import React from "react";
 
 function Book({ book, updateShelfCategory }) {
   const { title, publisher } = book;
-  const bookImage = book.imageLinks.thumbnail
-    ? book.imageLinks.thumbnail
-    : "none";
   return (
     <div className="book">
       <div className="book-top">
@@ -13,7 +10,7 @@ function Book({ book, updateShelfCategory }) {
           style={{
             width: 128,
             height: 193,
-            backgroundImage: `url(${bookImage})`,
+            backgroundImage: `url(${book.imageLinks.thumbnail})`,
           }}
         ></div>
         <div className="book-shelf-changer">

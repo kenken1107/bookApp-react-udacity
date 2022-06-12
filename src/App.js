@@ -49,11 +49,10 @@ function App() {
         if (data.error) {
           setSearchedBooks([]);
         } else {
-          console.log(data[0]);
           const filteredData = data.filter(
-            (d) => d.publisher != null && d.imageLinks.thumbnail != null
+            (d) => d.publisher !== undefined && d.imageLinks !== undefined
           );
-          setSearchedBooks(data);
+          setSearchedBooks(filteredData);
         }
       });
     }
